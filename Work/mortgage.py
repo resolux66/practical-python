@@ -9,7 +9,7 @@ months = 0
 extra_payment_month_start = 61
 extra_payment_month_end = 108
 extra_payment = 1000
-
+print(f"{'months': >5} {'total paid': >11} {'remain to pay'}\n")
 while principal > payment:
     months += 1
     if principal < payment:
@@ -20,9 +20,10 @@ while principal > payment:
     if months >= extra_payment_month_start and months <= extra_payment_month_end:
         total_paid += extra_payment
         principal -= extra_payment
-    print(months, round(total_paid, 2), round(principal, 2))
+    print(f'{months:>4} {total_paid: >12.2f} {principal: >12.2f}')
 months += 1
 total_paid += principal
 
-print('Total paid', round(total_paid, 2))
-print(months)
+print('\n Total paid', round(total_paid, 2))
+print()
+print( months)
